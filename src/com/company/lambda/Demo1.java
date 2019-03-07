@@ -21,7 +21,7 @@ public class Demo1 {
         /**
              * 使用过滤器和lambda表达式输出年龄是18的学生信息，为什么找不到
          */
-        //        添加学生
+            //        添加学生
         List<Student> studentList = AddStudent.add();
         studentList.stream()
                 .filter(student -> student.getAge() == 18)//过滤器，过滤出年龄等于18岁的学生信息。
@@ -68,7 +68,7 @@ public class Demo1 {
         List<Student> students = AddStudent.add();
         double average = students.stream()
                 .filter(student -> student.getName().indexOf("小") >= 0 || student.getName().indexOf("白") >= 0)
-                .mapToDouble(student -> student.getAge())
+                .mapToDouble(Student::getAge)
                 .average()
                 .getAsDouble();
         System.out.println(average);
